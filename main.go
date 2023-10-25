@@ -39,7 +39,7 @@ func calculateDays(w http.ResponseWriter, r *http.Request){
 
 func tokenAuthMiddleware(next http.Handler) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        // Get the token from the request header
+
         token := r.Header.Get("Authorization")
 
         if token == "" || token != "Bearer "+secretToken {
